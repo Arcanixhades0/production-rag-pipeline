@@ -1,0 +1,3 @@
+https://python.langchain.com/docs/introduction/
+https://ollama.com/blog
+https://huggingface.co/docs/transformers/index
