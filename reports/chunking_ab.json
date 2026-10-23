@@ -1,0 +1,90 @@
+{
+  "fixed": {
+    "chunks": 2519,
+    "build_seconds": 113,
+    "dense": {
+      "questions": 50,
+      "hit_rate": 0.84,
+      "mrr": 0.5886666666666667,
+      "precision": 0.26799999999999996,
+      "avg_context_chars": 3991.9,
+      "p50_ms": 19.094999999651918,
+      "p95_ms": 25.45445500018104
+    },
+    "hybrid_rerank": {
+      "questions": 50,
+      "hit_rate": 0.96,
+      "mrr": 0.8906666666666666,
+      "precision": 0.324,
+      "avg_context_chars": 4498.8,
+      "p50_ms": 2091.346799999883,
+      "p95_ms": 2735.1851450007416
+    }
+  },
+  "recursive": {
+    "chunks": 2535,
+    "build_seconds": 106,
+    "dense": {
+      "questions": 50,
+      "hit_rate": 0.8,
+      "mrr": 0.6006666666666667,
+      "precision": 0.27199999999999996,
+      "avg_context_chars": 3898.22,
+      "p50_ms": 19.705900000190013,
+      "p95_ms": 28.459239999847334
+    },
+    "hybrid_rerank": {
+      "questions": 50,
+      "hit_rate": 0.94,
+      "mrr": 0.8833333333333334,
+      "precision": 0.312,
+      "avg_context_chars": 4251.96,
+      "p50_ms": 2006.4026999998532,
+      "p95_ms": 2576.1329549995025
+    }
+  },
+  "sentence_window": {
+    "chunks": 12457,
+    "build_seconds": 136,
+    "dense": {
+      "questions": 50,
+      "hit_rate": 0.82,
+      "mrr": 0.6846666666666666,
+      "precision": 0.32799999999999996,
+      "avg_context_chars": 4175.08,
+      "p50_ms": 43.81820000025982,
+      "p95_ms": 120.24561000011997
+    },
+    "hybrid_rerank": {
+      "questions": 50,
+      "hit_rate": 0.98,
+      "mrr": 0.9156666666666666,
+      "precision": 0.504,
+      "avg_context_chars": 4085.74,
+      "p50_ms": 3070.70264999993,
+      "p95_ms": 4695.597265000288
+    }
+  },
+  "semantic": {
+    "chunks": 2741,
+    "build_seconds": 595,
+    "dense": {
+      "questions": 50,
+      "hit_rate": 0.82,
+      "mrr": 0.6103333333333333,
+      "precision": 0.24799999999999997,
+      "avg_context_chars": 3301.74,
+      "p50_ms": 20.043750000240834,
+      "p95_ms": 23.52953999948113
+    },
+    "hybrid_rerank": {
+      "questions": 50,
+      "hit_rate": 0.96,
+      "mrr": 0.9016666666666667,
+      "precision": 0.27999999999999997,
+      "avg_context_chars": 4277.78,
+      "p50_ms": 2636.504249999234,
+      "p95_ms": 3382.3798249998163
+    }
+  }
+}

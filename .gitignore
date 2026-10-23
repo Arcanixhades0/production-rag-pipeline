@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+chroma_db/
+faiss_index/
+data/*.pdf
+.pytest_cache/

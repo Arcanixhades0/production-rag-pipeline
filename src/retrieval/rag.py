@@ -1,26 +1,7 @@
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[2]))
-
-from langchain_community.vectorstores import FAISS
-from langchain_ollama import ChatOllama
-
-from embeddings import get_embeddings
+from src.pipeline import RAGPipeline
 
 
-embeddings = get_embeddings()
-
-vectorstore = FAISS.load_local(
-    "faiss_index",
-    embeddings,
-    allow_dangerous_deserialization=True
-)
-
-llm = ChatOllama(
-    model="qwen3.5:9b",
-    temperature=0
-)
+pipeline = RAGPipeline()
 
 while True:
 
@@ -29,32 +10,14 @@ while True:
     if query.lower() == "exit":
         break
 
-    docs = vectorstore.similarity_search(
-        query,
-        k=5
-    )
-
-    context = "\n\n".join(
-        doc.page_content
-        for doc in docs
-    )
-
-    prompt = f"""
-Answer the question using only the provided context.
-
-If the answer is not in the context, say:
-'I could not find that information in the knowledge base.'
-
-Context:
-{context}
-
-Question:
-{query}
-
-Answer:
-"""
-
-    response = llm.invoke(prompt)
+    result = pipeline.answer(query)
 
     print("\nAnswer:\n")
-    print(response.content)
+    print(result["answer"])
+
+    print("\nSources:")
+    for i, src in enumerate(result["sources"], start=1):
+        print(f"[{i}] {src['source']} | page {src['page']}")
+
+    t = result["timings"]
+    print(f"\n(retrieval {t['retrieval_ms']:.0f} ms, generation {t['generation_ms']:.0f} ms)")
